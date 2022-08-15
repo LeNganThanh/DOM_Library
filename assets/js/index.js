@@ -43,11 +43,11 @@ books.sort((a, b) => {
   const nameB = reverseAuthorName(b.author);
   return nameA.localeCompare(nameB);
 });
-
-/*----without Bootstrap-------------------------------
+/*----without Bootstrap-------------------------------*/
 
 const bookSection = document.createElement("section");
 bookSection.style.display = "flex";
+bookSection.style.flexWrap = "wrap";
 bookSection.style.justifyContent = "space-around";
 body.append(bookSection);
 books.forEach(book => {
@@ -94,61 +94,61 @@ books.forEach(book => {
   bookDetail.append(bookAuthor);
   bookDetail.after(bookRead);
   bookRead.append(bookSpan);
-}); */
+});
 
 //----Using Bootstrap class -------------------------
-books.forEach(book => {
-  const bookList = document.querySelector(".book-list");
-  const bookItem = document.createElement("li");
-  bookItem.classList.add("book", "card", "mb-3");
-  bookItem.style.width = "250px";
+// books.forEach(book => {
+//   const bookList = document.querySelector(".book-list");
+//   const bookItem = document.createElement("li");
+//   bookItem.classList.add("book", "card", "mb-3");
+//   bookItem.style.width = "250px";
 
-  const bookCard = document.createElement("section");
-  bookCard.classList.add("card-body");
+//   const bookCard = document.createElement("section");
+//   bookCard.classList.add("card-body");
 
-  const bookImg = document.createElement("img");
-  bookImg.classList.add("book-img", "card-img-top");
-  bookImg.src = book.img;
-  bookImg.style.width = "250px";
-  bookImg.style.height = "350px";
-  bookImg.style.border = "3px solid maroon";
+//   const bookImg = document.createElement("img");
+//   bookImg.classList.add("book-img", "card-img-top");
+//   bookImg.src = book.img;
+//   bookImg.style.width = "250px";
+//   bookImg.style.height = "350px";
+//   bookImg.style.border = "3px solid maroon";
 
-  const bookFooter = document.createElement("footer");
-  bookFooter.classList.add("card-footer", "text-end");
+//   const bookFooter = document.createElement("footer");
+//   bookFooter.classList.add("card-footer", "text-end");
 
-  const bookTitle = document.createElement("h5");
-  bookTitle.classList.add("card-title", "book-title");
-  bookTitle.textContent = book.title;
+//   const bookTitle = document.createElement("h5");
+//   bookTitle.classList.add("card-title", "book-title");
+//   bookTitle.textContent = book.title;
 
-  const bookAuthor = document.createElement("p");
-  bookAuthor.classList.add(
-    "card-subtitle",
-    "book-author",
-    "text-muted",
-    "small"
-  );
-  bookAuthor.textContent = reverseAuthorName(book.author);
+//   const bookAuthor = document.createElement("p");
+//   bookAuthor.classList.add(
+//     "card-subtitle",
+//     "book-author",
+//     "text-muted",
+//     "small"
+//   );
+//   bookAuthor.textContent = reverseAuthorName(book.author);
 
-  const bookRead = document.createElement("span");
-  bookRead.classList.add(
-    "status",
-    "rounded-pill",
-    "bg-secondary",
-    "badge",
-    "fw-normal"
-  );
-  bookRead.textContent = "To Read";
-  //check if Read or To Read status
-  if (book.alreadyRead) {
-    bookRead.classList.replace("bg-secondary", "bg-success");
-    bookRead.textContent = "Read";
-  }
+//   const bookRead = document.createElement("span");
+//   bookRead.classList.add(
+//     "status",
+//     "rounded-pill",
+//     "bg-secondary",
+//     "badge",
+//     "fw-normal"
+//   );
+//   bookRead.textContent = "To Read";
+//   //check if Read or To Read status
+//   if (book.alreadyRead) {
+//     bookRead.classList.replace("bg-secondary", "bg-success");
+//     bookRead.textContent = "Read";
+//   }
 
-  bookList.append(bookItem);
-  bookCard.appendChild(bookTitle);
-  bookCard.appendChild(bookAuthor);
-  bookFooter.appendChild(bookRead);
-  bookItem.appendChild(bookImg);
-  bookItem.appendChild(bookCard);
-  bookItem.appendChild(bookFooter);
-});
+//   bookList.append(bookItem);
+//   bookCard.appendChild(bookTitle);
+//   bookCard.appendChild(bookAuthor);
+//   bookFooter.appendChild(bookRead);
+//   bookItem.appendChild(bookImg);
+//   bookItem.appendChild(bookCard);
+//   bookItem.appendChild(bookFooter);
+// });
